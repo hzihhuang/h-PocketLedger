@@ -11,9 +11,11 @@ function App() {
     a();
   }, []);
   return (
-    <div>
+    <div className="flex gap-4 items-center">
       {list.map((tag) => (
-        <div key={tag.id}>{tag.name}</div>
+        <div className="w-64" key={tag.id}>
+          {tag.name}
+        </div>
       ))}
     </div>
   );

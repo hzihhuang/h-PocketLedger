@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
-import "./scss/index.scss";
 import App from "./pages/App.tsx";
 import { initializeDB } from "@db";
+import "./scss/index.scss";
 
 initializeDB();
 
