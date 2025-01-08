@@ -69,13 +69,13 @@ const findBill = async (id: number) => {
 };
 
 // 根据条件查询账单
-type BillQuery = {
+type BillsQuery = {
   type?: "income" | "expense" | "all"; // 收入、支出或全部
   tagID?: number; // 标签 ID
   startDate?: Date; // 开始日期
   endDate?: Date; // 结束日期
 };
-const getBill = async (options?: BillQuery) => {
+const getBills = async (options?: BillsQuery) => {
   try {
     const { type = "all", tagID, startDate, endDate } = options || {};
 
@@ -126,4 +126,4 @@ const getBill = async (options?: BillQuery) => {
   }
 };
 
-export { addBill, updateBill, deleteBill, getBill, findBill };
+export { addBill, updateBill, deleteBill, getBills, findBill };

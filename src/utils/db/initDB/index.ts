@@ -1,9 +1,10 @@
 import Dexie from "dexie";
 import { AccountBook, Tag } from "./table";
+import initializeTags from "./initTags";
 
 // 创建账本数据库
 const DB_NAME = "pocket-ledger-db";
-class PocketLedgerDB extends Dexie {
+export class PocketLedgerDB extends Dexie {
   tags: Dexie.Table<Tag, number>;
   account_book: Dexie.Table<AccountBook, number>;
 
@@ -13,7 +14,7 @@ class PocketLedgerDB extends Dexie {
     this.version(1).stores({
       account_book:
         "++id, price, tagID, note, book_date, create_date, update_date", // 账单表
-      tags: "++id, name, notes, type, create_date, update_date", // 标签表
+      tags: "++id, name, icon, notes, type, create_date, update_date", // 标签表
     });
 
     // 给表赋值
@@ -23,6 +24,7 @@ class PocketLedgerDB extends Dexie {
 }
 
 const db = new PocketLedgerDB();
+initializeTags(db);
 
 // 初始化数据库
 const initializeDB = async () => {

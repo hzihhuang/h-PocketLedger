@@ -1,5 +1,6 @@
 export interface Tag {
   id?: number; // 主键，自动递增
+  icon?: string; // 图标
   name: string; // 标签名称
   notes: string[]; // 标签的备注历史
   type: "income" | "expense"; // 收入或支出
