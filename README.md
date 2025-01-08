@@ -1,2 +1,5 @@
 # h-PocketLedger
-记账站点
+
+记账软件
+
+React + Typescript + IndexedDB
