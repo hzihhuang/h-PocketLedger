@@ -1,5 +1,5 @@
 {
-  "name": "xxx",
+  "name": "pocket-ledger",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -25,6 +25,7 @@
     "scss": "^0.2.4",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vite-plugin-pwa": "^0.21.1"
   }
 }
