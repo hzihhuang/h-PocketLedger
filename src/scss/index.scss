@@ -1,3 +1,12 @@
-.asdf {
-  width: 64px;
+:root {
+  --footer-tabbar-height: 50px;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.app-main {
+  padding-bottom: env(safe-area-inset-bottom);
 }

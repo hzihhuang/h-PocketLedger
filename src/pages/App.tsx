@@ -1,23 +1,17 @@
-import { getTags, Tag } from "@db";
-import { useEffect, useState } from "react";
+import TabBar from "@/components/TabBar";
 
 function App() {
-  const [list, setList] = useState<Tag[]>([]);
-  useEffect(() => {
-    const a = async () => {
-      const tags = await getTags();
-      setList(tags);
-    };
-    a();
-  }, []);
   return (
-    <div className="flex gap-4 items-center">
-      {list.map((tag) => (
-        <div className="w-17" key={tag.id}>
-          {tag.name}
-        </div>
-      ))}
-    </div>
+    <>
+      <main className="app-main">
+        <img
+          className="h-[200vh] w-full block"
+          src="https://picsum.photos/430/1800"
+          alt=""
+        />
+      </main>
+      <TabBar />
+    </>
   );
 }
 
