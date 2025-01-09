@@ -1,0 +1,18 @@
+.floatButton {
+  position: fixed;
+  z-index: 999;
+  right: 16px;
+  bottom: calc(env(safe-area-inset-bottom) + var(--footer-tabbar-height) + 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  width: 56px;
+  height: 56px;
+  box-shadow: 0px 1px 8px 0px #DBE0F5;
+  background-color: #3145f0;
+  cursor: pointer;
+  // 苹果小白条
+  padding-bottom: env(safe-area-inset-bottom);
+}
+    

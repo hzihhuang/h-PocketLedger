@@ -13,7 +13,7 @@ const TabBar: React.FC<Props> = ({}) => {
   ];
   const [active, setActive] = useState(list[0].name);
   return (
-    <div className={clsx(css["tabbar"])}>
+    <div className={clsx(css.tabbar)}>
       {list.map((item) => (
         <div
           className={clsx("tabbar-item", { active: item.name === active })}

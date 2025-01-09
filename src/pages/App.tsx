@@ -1,3 +1,4 @@
+import FloatButton from "@/components/FloatButton";
 import TabBar from "@/components/TabBar";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
           alt=""
         />
       </main>
+      <FloatButton />
       <TabBar />
     </>
   );
