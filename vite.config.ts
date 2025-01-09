@@ -2,15 +2,55 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
+import UnoCSS from "unocss/vite";
+import { presetAttributify, presetUno, Rule } from "unocss";
 // @ts-ignore
-import tailwindcss from "tailwindcss";
-import autoprefixer from "autoprefixer";
 import px2vw from "postcss-px-to-viewport";
+
+/**
+ * UnoCSS 映射函数
+ * @param properties 属性名前缀和属性名的映射
+ * @returns
+ */
+function generateRules(properties: Record<string, string>) {
+  const rules = [];
+  for (const [prefix, property] of Object.entries(properties)) {
+    rules.push([
+      new RegExp(`^${prefix}-(\\d+)$`),
+      ([, value]: string[]) => ({ [property]: `${value}px` }),
+    ]);
+  }
+  return rules as Rule<object>[];
+}
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    UnoCSS({
+      presets: [presetUno(), presetAttributify()],
+      rules: [
+        [/^w-(\d+)$/, ([, d]) => ({ width: `${d}px` })],
+        ...generateRules({
+          w: "width",
+          h: "height",
+          p: "padding",
+          pt: "paddingTop",
+          pb: "paddingBottom",
+          pl: "paddingLeft",
+          pr: "paddingRight",
+          m: "margin",
+          mt: "marginTop",
+          mb: "marginBottom",
+          ml: "marginLeft",
+          mr: "marginRight",
+          fs: "fontSize",
+          lh: "lineHeight",
+          fw: "fontWeight",
+        }),
+      ],
+      shortcuts: {},
+    }),
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
@@ -46,8 +86,6 @@ export default defineConfig({
   css: {
     postcss: {
       plugins: [
-        tailwindcss(),
-        autoprefixer(),
         px2vw({
           viewportWidth: 402, // 设计稿宽度（可以根据设计稿调整，比如 375px 或 750px）
           viewportHeight: 852, // 设计稿高度（可选，针对竖屏和适配高宽比的需求）

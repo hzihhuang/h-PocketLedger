@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="flex gap-4 items-center">
       {list.map((tag) => (
-        <div className="w-64" key={tag.id}>
+        <div className="w-17" key={tag.id}>
           {tag.name}
         </div>
       ))}
