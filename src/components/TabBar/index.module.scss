@@ -9,7 +9,7 @@
   border-top: 1px solid #bebebe;
   width: 100%;
   height: calc(var(--footer-tabbar-height) + env(safe-area-inset-bottom));
-  background-color: rgba($color: white, $alpha: 0.8);
+  background-color: rgba($color: white, $alpha: 0.6);
   backdrop-filter: blur(10px);
   // 苹果小白条
   padding-bottom: env(safe-area-inset-bottom);

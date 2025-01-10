@@ -1,4 +1,5 @@
 :root {
+  --header-navbar-height: 44px;
   --footer-tabbar-height: 50px;
 }
 
@@ -8,5 +9,6 @@ html, body {
 }
 
 .app-main {
-  padding-bottom: env(safe-area-inset-bottom);
+  padding: calc(12px + env(safe-area-inset-top) + var(--header-navbar-height)) 10px calc(12px + env(safe-area-inset-bottom));
+  background-color: #f5f6fa;
 }
