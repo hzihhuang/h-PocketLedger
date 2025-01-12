@@ -47,6 +47,7 @@ export default defineConfig({
           fs: "font-size",
           lh: "line-height",
           radius: "border-radius",
+          gap: "gap",
         }),
       ],
       shortcuts: {},

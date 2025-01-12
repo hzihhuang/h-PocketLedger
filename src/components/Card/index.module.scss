@@ -3,5 +3,13 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 1px 8px #DBE0F5;
+
+  :global {
+    .card-title {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: bold;
+    }
+  }
 }
     
