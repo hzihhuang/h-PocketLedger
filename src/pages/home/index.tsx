@@ -18,17 +18,17 @@ const HomePage: React.FC<Props> = ({}) => {
   return (
     <div className="flex flex-col gap-24 p-12">
       <Card>
-        <div className="fs-14 lh-22 fw-bold">利润与亏损</div>
-        <div className="mt-8 fs-24 fw-bold lh-32">¥{formatPrice(price)}</div>
+        <div className="fs-14 lh-22 fw-bold">已存</div>
+        <div className="mt-8 fs-24 fw-bold lh-32">{formatPrice(price)}</div>
         <div className="mt-24 radius-6 h-48 overflow-hidden flex fs-16 fw-bold lh-20">
           <div className="w-[60%] bg-[#cad0f6] h-full flex items-center pl-12">
-            ¥{formatPrice(price)}
+            {formatPrice(price)}
           </div>
           <div className="w-[40%] bg-[#f6c9ca] h-full flex items-center justify-end pr-12">
-            ¥{formatPrice(price)}
+            {formatPrice(price)}
           </div>
         </div>
-        <div className="flex items-center justify-between mt-8 fs-14 lh-22 color-[#6A6B82]">
+        <div className="flex items-center justify-between mt-8 fs-12 lh-20 color-[#6A6B82]">
           <span>收入</span>
           <span>支出</span>
         </div>
