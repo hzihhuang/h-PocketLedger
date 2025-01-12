@@ -46,7 +46,7 @@ export default defineConfig({
           mr: "margin-right",
           fs: "font-size",
           lh: "line-height",
-          fw: "font-weight",
+          radius: "border-radius",
         }),
       ],
       shortcuts: {},

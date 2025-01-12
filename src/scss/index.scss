@@ -1,14 +1,25 @@
 :root {
-  --header-navbar-height: 44px;
-  --footer-tabbar-height: 50px;
+  --header-navbar-height: 48px;
+  --footer-tabbar-height: 56px;
 }
 
-html, body {
+html, body, ul {
   padding: 0;
   margin: 0;
 }
 
+ul li {
+  list-style: none;
+}
+
+div, li, p {
+  box-sizing: border-box;
+}
+
 .app-main {
-  padding: calc(12px + env(safe-area-inset-top) + var(--header-navbar-height)) 10px calc(12px + env(safe-area-inset-bottom));
+  padding-top: calc(var(--header-navbar-height) + env(safe-area-inset-top));
+  padding-bottom: calc(var(--footer-tabbar-height) + env(safe-area-inset-bottom));
   background-color: #f5f6fa;
+  box-sizing: border-box;
+  height: 100vh;
 }

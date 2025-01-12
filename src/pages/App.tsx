@@ -1,37 +1,32 @@
-import Card from "@/components/Card";
 import FloatButton from "@/components/FloatButton";
 import NavBar from "@/components/NavBar";
 import TabBar from "@/components/TabBar";
+import { Navigate, Route, Routes } from "react-router-dom";
+import HomePage from "./home";
+import ChartPage from "./chart";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <main className="app-main">
-        <Card>
-          <img
-            className="h-300 w-full block"
-            src="https://picsum.photos/200"
-            alt=""
-          />
-        </Card>
-        <Card>
-          <img
-            className="h-300 w-full block"
-            src="https://picsum.photos/200"
-            alt=""
-          />
-        </Card>
-        <Card>
-          <img
-            className="h-300 w-full block"
-            src="https://picsum.photos/200"
-            alt=""
-          />
-        </Card>
-      </main>
-      <FloatButton />
-      <TabBar />
+      <Routes>
+        <Route
+          path="/*"
+          element={
+            <>
+              <NavBar />
+              <main className="app-main">
+                <Routes>
+                  <Route index element={<Navigate to="home" />} />
+                  <Route path="home" index element={<HomePage />} />
+                  <Route path="chart" element={<ChartPage />} />
+                </Routes>
+              </main>
+              <FloatButton />
+              <TabBar />
+            </>
+          }
+        />
+      </Routes>
     </>
   );
 }
